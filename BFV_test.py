@@ -37,7 +37,6 @@ def fuzzy_match(context, query, data_folder):
 
     min_mse = float('inf')  # 初始化为正无穷大
     min_mse_filename = None
-
     mse_values = []
 
     for filename in os.listdir(data_folder):
@@ -68,7 +67,6 @@ def fuzzy_match(context, query, data_folder):
         print(f"\n最佳匹配图像: {min_mse_filename}, 最小MSE: {min_mse}")
     else:
         print("\n没有找到匹配的加密图像")
-
     print("\n匹配时间: {:.6f} 毫秒".format((query_end - query_start) * 1000))
 
 # 创建加密上下文
@@ -80,8 +78,6 @@ script_directory = os.path.dirname(script_path)
 encrypted_images_folder = os.path.join(script_directory, "encrypted_images")
 os.makedirs(encrypted_images_folder, exist_ok=True)
 
-script_path = os.path.abspath(__file__)
-script_directory = os.path.dirname(script_path)
 images_folder = os.path.join(script_directory, "images")
 
 image_paths = [os.path.join(images_folder, filename) for filename in os.listdir(images_folder) if filename.endswith(".PNG")]
