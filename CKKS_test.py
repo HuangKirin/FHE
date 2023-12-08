@@ -56,7 +56,7 @@ def fuzzy_match(context, query, data_folder):
                 min_mse = mse
                 min_mse_filename = filename[:-4]
             # 输出格式化字符串
-            print("加密图像：{:<20}  MSE：{:<15.6f}  加密时间：{:<15.6f}".format(
+            print("加密图像：{:<20}  MSE：{:<15.6f}  查询时间：{:<15.6f}".format(
                 filename[:-4], mse, (encryption_end - encryption_start) * 1000))
 
     query_end = time()
