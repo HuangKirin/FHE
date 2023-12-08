@@ -5,7 +5,10 @@ from PIL import Image
 from time import time
 
 def encrypt_and_save_image(context, image_array, folder_path, file_name):
+    encryption_start = time()
     encrypted_data = ts.ckks_vector(context, image_array.flatten())
+    encryption_end = time()
+    print(f"第{i}张图像加密时间：{((encryption_end - encryption_start)*1000)}")
 
     encrypted_data_path = os.path.join(folder_path, file_name + ".bin")
     
